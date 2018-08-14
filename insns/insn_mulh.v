@@ -34,7 +34,7 @@ module rvfi_insn_mulh (
 `ifdef RISCV_FORMAL_ALTOPS
   wire [`RISCV_FORMAL_XLEN:0] rs1 = {{`RISCV_FORMAL_XLEN{rvfi_rs1_rdata[`RISCV_FORMAL_XLEN-1]}}, rvfi_rs1_rdata};
   wire [`RISCV_FORMAL_XLEN:0] rs2 = {{`RISCV_FORMAL_XLEN{rvfi_rs2_rdata[`RISCV_FORMAL_XLEN-1]}}, rvfi_rs2_rdata};
-  wire [`RISCV_FORMAL_XLEN-1:0] result = ($signed({rs1, rs1}) + $signed({rs2, rs2})) >> `RISCV_FORMAL_XLEN;
+  wire [`RISCV_FORMAL_XLEN-1:0] result = (($signed({rs1, rs1}) + $signed({rs2, rs2}))>>2) >> `RISCV_FORMAL_XLEN;
 `else
   wire [`RISCV_FORMAL_XLEN-1:0] result = ({{`RISCV_FORMAL_XLEN{rvfi_rs1_rdata[`RISCV_FORMAL_XLEN-1]}}, rvfi_rs1_rdata} *
 		{{`RISCV_FORMAL_XLEN{rvfi_rs2_rdata[`RISCV_FORMAL_XLEN-1]}}, rvfi_rs2_rdata}) >> `RISCV_FORMAL_XLEN;
