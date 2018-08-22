@@ -28,8 +28,8 @@ module rvfi_wrapper (
 		.clk      (clock    ),
 		.reset    (reset   ),
 
-        .io_instr_valid(instr_valid),
-        .io_instr(instr),
+        .instr_valid(instr_valid),
+        .instr(instr),
 
 `ifdef DUMMY
 		.iBus_cmd_valid (iBus_cmd_valid),

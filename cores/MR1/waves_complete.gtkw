@@ -1,0 +1,94 @@
+[*]
+[*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
+[*] Wed Aug 22 04:33:26 2018
+[*]
+[dumpfile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/complete/engine_0/trace.vcd"
+[dumpfile_mtime] "Wed Aug 22 04:29:07 2018"
+[dumpfile_size] 204987
+[savefile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/waves_complete.gtkw"
+[timestart] 0
+[size] 2209 1117
+[pos] 378 477
+*-3.233918 25 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[sst_width] 225
+[signals_width] 245
+[sst_expanded] 1
+[sst_vpaned_height] 342
+@28
+testbench.clk
+testbench.reset
+testbench.rvfi_valid
+testbench.rvfi_trap
+@22
+testbench.rvfi_insn[31:0]
+@800022
+testbench.rvfi_insn[31:0]
+@c00028
+#{testbench.rvfi_insn[24:20]} (7)testbench.rvfi_insn[31:0] (8)testbench.rvfi_insn[31:0] (9)testbench.rvfi_insn[31:0] (10)testbench.rvfi_insn[31:0] (11)testbench.rvfi_insn[31:0]
+@28
+(7)testbench.rvfi_insn[31:0]
+(8)testbench.rvfi_insn[31:0]
+(9)testbench.rvfi_insn[31:0]
+(10)testbench.rvfi_insn[31:0]
+(11)testbench.rvfi_insn[31:0]
+@1401208
+-group_end
+@c00028
+#{testbench.rvfi_insn[19:15]} (12)testbench.rvfi_insn[31:0] (13)testbench.rvfi_insn[31:0] (14)testbench.rvfi_insn[31:0] (15)testbench.rvfi_insn[31:0] (16)testbench.rvfi_insn[31:0]
+@28
+(12)testbench.rvfi_insn[31:0]
+(13)testbench.rvfi_insn[31:0]
+(14)testbench.rvfi_insn[31:0]
+(15)testbench.rvfi_insn[31:0]
+(16)testbench.rvfi_insn[31:0]
+@1401208
+-group_end
+@c00028
+#{testbench.rvfi_insn[11:7]} (20)testbench.rvfi_insn[31:0] (21)testbench.rvfi_insn[31:0] (22)testbench.rvfi_insn[31:0] (23)testbench.rvfi_insn[31:0] (24)testbench.rvfi_insn[31:0]
+@28
+(20)testbench.rvfi_insn[31:0]
+(21)testbench.rvfi_insn[31:0]
+(22)testbench.rvfi_insn[31:0]
+(23)testbench.rvfi_insn[31:0]
+(24)testbench.rvfi_insn[31:0]
+@1401208
+-group_end
+@200
+-
+@c00029
+#{testbench.rvfi_insn[31:25]} (0)testbench.rvfi_insn[31:0] (1)testbench.rvfi_insn[31:0] (2)testbench.rvfi_insn[31:0] (3)testbench.rvfi_insn[31:0] (4)testbench.rvfi_insn[31:0] (5)testbench.rvfi_insn[31:0] (6)testbench.rvfi_insn[31:0]
+@29
+(0)testbench.rvfi_insn[31:0]
+(1)testbench.rvfi_insn[31:0]
+(2)testbench.rvfi_insn[31:0]
+(3)testbench.rvfi_insn[31:0]
+(4)testbench.rvfi_insn[31:0]
+(5)testbench.rvfi_insn[31:0]
+(6)testbench.rvfi_insn[31:0]
+@1401209
+-group_end
+@c00028
+#{testbench.rvfi_insn[14:12]} (17)testbench.rvfi_insn[31:0] (18)testbench.rvfi_insn[31:0] (19)testbench.rvfi_insn[31:0]
+@28
+(17)testbench.rvfi_insn[31:0]
+(18)testbench.rvfi_insn[31:0]
+(19)testbench.rvfi_insn[31:0]
+@1401208
+-group_end
+@c00028
+#{testbench.rvfi_insn[6:0]} (25)testbench.rvfi_insn[31:0] (26)testbench.rvfi_insn[31:0] (27)testbench.rvfi_insn[31:0] (28)testbench.rvfi_insn[31:0] (29)testbench.rvfi_insn[31:0] (30)testbench.rvfi_insn[31:0] (31)testbench.rvfi_insn[31:0]
+@28
+(25)testbench.rvfi_insn[31:0]
+(26)testbench.rvfi_insn[31:0]
+(27)testbench.rvfi_insn[31:0]
+(28)testbench.rvfi_insn[31:0]
+(29)testbench.rvfi_insn[31:0]
+(30)testbench.rvfi_insn[31:0]
+(31)testbench.rvfi_insn[31:0]
+@1401208
+-group_end
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
