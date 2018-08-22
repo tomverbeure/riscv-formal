@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Wed Aug 22 05:48:29 2018
+[*] Wed Aug 22 06:37:00 2018
 [*]
-[dumpfile] "/home/ubuntu/projects/riscv-formal-tvb/cores/MR1/checks/insn_add_ch0/engine_0/trace.vcd"
-[dumpfile_mtime] "Wed Aug 22 05:48:22 2018"
-[dumpfile_size] 196134
+[dumpfile] "/home/ubuntu/projects/riscv-formal-tvb/cores/MR1/checks/insn_beq_ch0/engine_0/trace.vcd"
+[dumpfile_mtime] "Wed Aug 22 06:27:02 2018"
+[dumpfile_size] 205635
 [savefile] "/home/ubuntu/projects/riscv-formal-tvb/cores/MR1/waves_insn_check.gtkw"
-[timestart] 0
+[timestart] 122
 [size] 1892 1062
 [pos] -1 -1
-*-4.000821 55 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-4.000821 205 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] rvfi_testbench.
 [treeopen] rvfi_testbench.checker_inst.
 [treeopen] rvfi_testbench.wrapper.
@@ -133,7 +133,7 @@ rvfi_testbench.checker_inst.rvfi_mem_wmask[3:0]
 -rvfi_mem
 @200
 -
-@c00200
+@800200
 -spec
 @28
 rvfi_testbench.checker_inst.spec_valid
@@ -148,7 +148,7 @@ rvfi_testbench.checker_inst.spec_rd_addr[4:0]
 rvfi_testbench.checker_inst.spec_rd_wdata[31:0]
 @200
 -
-@22
+@23
 rvfi_testbench.checker_inst.spec_pc_wdata[31:0]
 @200
 -
@@ -157,7 +157,7 @@ rvfi_testbench.checker_inst.spec_mem_addr[31:0]
 rvfi_testbench.checker_inst.spec_mem_rmask[3:0]
 rvfi_testbench.checker_inst.spec_mem_wdata[31:0]
 rvfi_testbench.checker_inst.spec_mem_wmask[3:0]
-@1401200
+@1000200
 -spec
 @200
 -
@@ -180,7 +180,7 @@ rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (4)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (5)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (6)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
-@1401208
+@1401200
 -group_end
 @c00024
 #{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[24:20]} (7)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (8)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (9)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (10)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (11)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
@@ -190,7 +190,7 @@ rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (9)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (10)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (11)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
-@1401204
+@1401200
 -group_end
 @c00024
 #{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[19:15]} (12)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (13)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (14)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (15)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (16)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
@@ -200,7 +200,7 @@ rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (14)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (15)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (16)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
-@1401204
+@1401200
 -group_end
 @c00028
 #{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[14:12]} (17)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (18)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (19)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
@@ -218,7 +218,7 @@ rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (22)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (23)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (24)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
-@1401204
+@1401200
 -group_end
 @c00028
 #{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[6:0]} (25)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (26)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (27)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (28)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (29)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (30)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (31)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
@@ -230,7 +230,7 @@ rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (29)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (30)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
 (31)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
-@1401208
+@1401200
 -group_end
 @1001200
 -group_end
@@ -244,9 +244,8 @@ rvfi_testbench.wrapper.uut.decode_1.io_d2e_pc[31:0]
 rvfi_testbench.wrapper.uut.decode_1.pc_pc_jump_stall
 @200
 -
-@23
-rvfi_testbench.wrapper.uut.execute_1.io_d2e_instr[31:0]
 @22
+rvfi_testbench.wrapper.uut.execute_1.io_d2e_instr[31:0]
 rvfi_testbench.wrapper.uut.execute_1.io_d2e_pc[31:0]
 rvfi_testbench.wrapper.uut.execute_1.jump_pc[31:0]
 rvfi_testbench.wrapper.uut.execute_1.b_imm_12_1[11:0]
