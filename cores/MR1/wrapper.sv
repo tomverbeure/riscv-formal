@@ -25,6 +25,7 @@ module rvfi_wrapper (
 `endif
 
     (* keep *) wire instr_valid;
+    (* keep *) wire instr_stall;
     (* keep *) wire [31:0]  instr;
 
 	MR1 uut (
@@ -32,6 +33,7 @@ module rvfi_wrapper (
 		.reset    (reset   ),
 
         .instr_valid(instr_valid),
+        .instr_stall(instr_stall),
         .instr(instr),
 
 `ifdef DUMMY
@@ -55,6 +57,11 @@ module rvfi_wrapper (
 
 		`RVFI_CONN
 	);
+
+    always @(*) begin
+        if (!instr_stall)  
+            assume(!instr_valid);
+    end
 
 `ifdef VEXRISCV_FAIRNESS
 	(* keep *) reg [2:0] iBusCmdPendingCycles = 0;

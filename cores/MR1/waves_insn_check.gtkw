@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
-[*] Wed Aug 22 04:54:28 2018
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Wed Aug 22 05:48:29 2018
 [*]
-[dumpfile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/checks/insn_add_ch0/engine_0/trace.vcd"
-[dumpfile_mtime] "Wed Aug 22 04:54:17 2018"
-[dumpfile_size] 210887
-[savefile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/waves_insn_check.gtkw"
-[timestart] 118
-[size] 1922 1425
-[pos] 551 237
-*-4.000821 205 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/ubuntu/projects/riscv-formal-tvb/cores/MR1/checks/insn_add_ch0/engine_0/trace.vcd"
+[dumpfile_mtime] "Wed Aug 22 05:48:22 2018"
+[dumpfile_size] 196134
+[savefile] "/home/ubuntu/projects/riscv-formal-tvb/cores/MR1/waves_insn_check.gtkw"
+[timestart] 0
+[size] 1892 1062
+[pos] -1 -1
+*-4.000821 55 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] rvfi_testbench.
 [treeopen] rvfi_testbench.checker_inst.
 [treeopen] rvfi_testbench.wrapper.
@@ -17,7 +17,7 @@
 [sst_width] 359
 [signals_width] 364
 [sst_expanded] 1
-[sst_vpaned_height] 450
+[sst_vpaned_height] 410
 @28
 rvfi_testbench.checker_inst.reset
 rvfi_testbench.checker_inst.clock
@@ -34,26 +34,38 @@ rvfi_testbench.checker_inst.rvfi_order[63:0]
 -
 @800022
 rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@c00028
+#{rvfi_testbench.checker_inst.rvfi_insn[31:25]} (0)rvfi_testbench.checker_inst.rvfi_insn[31:0] (1)rvfi_testbench.checker_inst.rvfi_insn[31:0] (2)rvfi_testbench.checker_inst.rvfi_insn[31:0] (3)rvfi_testbench.checker_inst.rvfi_insn[31:0] (4)rvfi_testbench.checker_inst.rvfi_insn[31:0] (5)rvfi_testbench.checker_inst.rvfi_insn[31:0] (6)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 @28
 (0)rvfi_testbench.checker_inst.rvfi_insn[31:0]
-@29
 (1)rvfi_testbench.checker_inst.rvfi_insn[31:0]
-@28
 (2)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (3)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (4)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (5)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (6)rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@1401200
+-group_end
+@c00024
+#{rvfi_testbench.checker_inst.rvfi_insn[24:20]} (7)rvfi_testbench.checker_inst.rvfi_insn[31:0] (8)rvfi_testbench.checker_inst.rvfi_insn[31:0] (9)rvfi_testbench.checker_inst.rvfi_insn[31:0] (10)rvfi_testbench.checker_inst.rvfi_insn[31:0] (11)rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@28
 (7)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (8)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (9)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (10)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (11)rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@1401200
+-group_end
+@c00024
+#{rvfi_testbench.checker_inst.rvfi_insn[19:15]} (12)rvfi_testbench.checker_inst.rvfi_insn[31:0] (13)rvfi_testbench.checker_inst.rvfi_insn[31:0] (14)rvfi_testbench.checker_inst.rvfi_insn[31:0] (15)rvfi_testbench.checker_inst.rvfi_insn[31:0] (16)rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@28
 (12)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (13)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (14)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (15)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (16)rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@1401200
+-group_end
 @c00028
 #{rvfi_testbench.checker_inst.rvfi_insn[14:12]} (17)rvfi_testbench.checker_inst.rvfi_insn[31:0] (18)rvfi_testbench.checker_inst.rvfi_insn[31:0] (19)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 @28
@@ -62,12 +74,16 @@ rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (19)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 @1401200
 -group_end
+@c00024
+#{rvfi_testbench.checker_inst.rvfi_insn[11:7]} (20)rvfi_testbench.checker_inst.rvfi_insn[31:0] (21)rvfi_testbench.checker_inst.rvfi_insn[31:0] (22)rvfi_testbench.checker_inst.rvfi_insn[31:0] (23)rvfi_testbench.checker_inst.rvfi_insn[31:0] (24)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 @28
 (20)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (21)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (22)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (23)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (24)rvfi_testbench.checker_inst.rvfi_insn[31:0]
+@1401200
+-group_end
 @c00028
 #{rvfi_testbench.checker_inst.rvfi_insn[6:0]} (25)rvfi_testbench.checker_inst.rvfi_insn[31:0] (26)rvfi_testbench.checker_inst.rvfi_insn[31:0] (27)rvfi_testbench.checker_inst.rvfi_insn[31:0] (28)rvfi_testbench.checker_inst.rvfi_insn[31:0] (29)rvfi_testbench.checker_inst.rvfi_insn[31:0] (30)rvfi_testbench.checker_inst.rvfi_insn[31:0] (31)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 @28
@@ -78,43 +94,51 @@ rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (29)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (30)rvfi_testbench.checker_inst.rvfi_insn[31:0]
 (31)rvfi_testbench.checker_inst.rvfi_insn[31:0]
-@1401208
+@1401200
 -group_end
 @1001200
 -group_end
 @200
 -
+@800200
+-rvfi_pc
 @22
 rvfi_testbench.checker_inst.rvfi_pc_rdata[31:0]
 rvfi_testbench.checker_inst.rvfi_pc_wdata[31:0]
-@200
--
+@1000200
+-rvfi_pc
+@c00200
+-rvfi_regs
 @24
 rvfi_testbench.checker_inst.rvfi_rs1_addr[4:0]
 rvfi_testbench.checker_inst.rvfi_rs2_addr[4:0]
 rvfi_testbench.checker_inst.rvfi_rd_addr[4:0]
+@200
+-
 @22
 rvfi_testbench.checker_inst.rvfi_rs1_rdata[31:0]
 rvfi_testbench.checker_inst.rvfi_rs2_rdata[31:0]
-@200
--
-@22
 rvfi_testbench.checker_inst.rvfi_rd_wdata[31:0]
-@200
--
+@1401200
+-rvfi_regs
+@c00200
+-rvfi_mem
 @22
 rvfi_testbench.checker_inst.rvfi_mem_addr[31:0]
 rvfi_testbench.checker_inst.rvfi_mem_rdata[31:0]
 rvfi_testbench.checker_inst.rvfi_mem_rmask[3:0]
 rvfi_testbench.checker_inst.rvfi_mem_wdata[31:0]
 rvfi_testbench.checker_inst.rvfi_mem_wmask[3:0]
+@1401200
+-rvfi_mem
 @200
 -
+@c00200
+-spec
 @28
 rvfi_testbench.checker_inst.spec_valid
 rvfi_testbench.checker_inst.spec_trap
 @200
--
 -
 @24
 rvfi_testbench.checker_inst.spec_rs1_addr[4:0]
@@ -133,11 +157,98 @@ rvfi_testbench.checker_inst.spec_mem_addr[31:0]
 rvfi_testbench.checker_inst.spec_mem_rmask[3:0]
 rvfi_testbench.checker_inst.spec_mem_wdata[31:0]
 rvfi_testbench.checker_inst.spec_mem_wmask[3:0]
+@1401200
+-spec
 @200
 -
 @22
 rvfi_testbench.wrapper.uut.execute_1.rs1[31:0]
 rvfi_testbench.wrapper.uut.execute_1.rs2[31:0]
-rvfi_testbench.wrapper.uut.execute_1.alu_result[31:0]
+@200
+-
+@28
+rvfi_testbench.wrapper.uut.decode_1.io_f2d_valid
+@800022
+rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@c00028
+#{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:25]} (0)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (1)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (2)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (3)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (4)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (5)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (6)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@28
+(0)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(1)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(2)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(3)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(4)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(5)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(6)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@1401208
+-group_end
+@c00024
+#{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[24:20]} (7)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (8)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (9)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (10)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (11)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@28
+(7)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(8)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(9)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(10)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(11)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@1401204
+-group_end
+@c00024
+#{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[19:15]} (12)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (13)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (14)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (15)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (16)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@28
+(12)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(13)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(14)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(15)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(16)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@1401204
+-group_end
+@c00028
+#{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[14:12]} (17)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (18)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (19)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@28
+(17)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(18)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(19)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@1401200
+-group_end
+@c00024
+#{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[11:7]} (20)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (21)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (22)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (23)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (24)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@28
+(20)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(21)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(22)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(23)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(24)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@1401204
+-group_end
+@c00028
+#{rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[6:0]} (25)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (26)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (27)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (28)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (29)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (30)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0] (31)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@28
+(25)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(26)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(27)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(28)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(29)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(30)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+(31)rvfi_testbench.wrapper.uut.decode_1.io_f2d_instr[31:0]
+@1401208
+-group_end
+@1001200
+-group_end
+@200
+-
+@22
+rvfi_testbench.wrapper.uut.decode_1.pc_pc[31:0]
+rvfi_testbench.wrapper.uut.decode_1.io_d2e_instr[31:0]
+rvfi_testbench.wrapper.uut.decode_1.io_d2e_pc[31:0]
+@28
+rvfi_testbench.wrapper.uut.decode_1.pc_pc_jump_stall
+@200
+-
+@23
+rvfi_testbench.wrapper.uut.execute_1.io_d2e_instr[31:0]
+@22
+rvfi_testbench.wrapper.uut.execute_1.io_d2e_pc[31:0]
+rvfi_testbench.wrapper.uut.execute_1.jump_pc[31:0]
+rvfi_testbench.wrapper.uut.execute_1.b_imm_12_1[11:0]
 [pattern_trace] 1
 [pattern_trace] 0
