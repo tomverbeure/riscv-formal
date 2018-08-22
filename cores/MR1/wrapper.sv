@@ -24,6 +24,9 @@ module rvfi_wrapper (
 	(* keep *) `rvformal_rand_reg   [31:0] dBus_rsp_data;
 `endif
 
+    (* keep *) wire instr_valid;
+    (* keep *) wire [31:0]  instr;
+
 	MR1 uut (
 		.clk      (clock    ),
 		.reset    (reset   ),
