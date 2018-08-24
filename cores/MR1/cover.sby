@@ -18,5 +18,5 @@ prep -nordff -top testbench
 
 [files]
 ../../checks/rvfi_macros.vh
-../../../mr1/mr1.v
+MR1.v
 cover.sv

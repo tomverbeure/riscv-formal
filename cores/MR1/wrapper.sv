@@ -24,17 +24,21 @@ module rvfi_wrapper (
 	(* keep *) `rvformal_rand_reg   [31:0] dBus_rsp_data;
 `endif
 
-    (* keep *) wire instr_valid;
-    (* keep *) wire instr_stall;
-    (* keep *) wire [31:0]  instr;
+    (* keep *) wire instr_req_valid;
+    (* keep *) wire instr_req_ready;
+    (* keep *) wire [31:0] instr_req_addr;
+    (* keep *) wire instr_rsp_valid;
+    (* keep *) wire [31:0]  instr_rsp_data;
 
 	MR1 uut (
 		.clk      (clock    ),
 		.reset    (reset   ),
 
-        .instr_valid(instr_valid),
-        .instr_stall(instr_stall),
-        .instr(instr),
+        .instr_req_valid(instr_req_valid),
+        .instr_req_ready(instr_req_ready),
+        .instr_req_addr(instr_req_ready),
+        .instr_rsp_valid(instr_rsp_valid),
+        .instr_rsp_data(instr_rsp_data),
 
 `ifdef DUMMY
 		.iBus_cmd_valid (iBus_cmd_valid),
@@ -57,11 +61,6 @@ module rvfi_wrapper (
 
 		`RVFI_CONN
 	);
-
-    always @(*) begin
-        if (!instr_stall)  
-            assume(!instr_valid);
-    end
 
 `ifdef VEXRISCV_FAIRNESS
 	(* keep *) reg [2:0] iBusCmdPendingCycles = 0;

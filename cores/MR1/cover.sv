@@ -1,8 +1,11 @@
 module testbench (
 	input clk,
 
-	input         instr_valid,
-    input  [31:0] instr
+	output         instr_req_valid,
+	input          instr_req_ready,
+	output [31:0]  instr_req_addr,
+    input          instr_rsp_valid,
+    input  [31:0]  instr_rsp_data
 
 );
 	reg reset = 1;
@@ -16,8 +19,12 @@ module testbench (
 		.clk            (clk           ),
 		.reset          (reset         ),
 
-		.instr_valid    (instr_valid   ),
-		.instr          (instr         ),
+		.instr_req_valid    (instr_req_valid   ),
+		.instr_req_ready    (instr_req_ready   ),
+		.instr_req_addr     (instr_req_addr    ),
+
+		.instr_rsp_valid    (instr_rsp_valid   ),
+		.instr_rsp_data     (instr_rsp_data    ),
 
 		`RVFI_CONN
 	);
@@ -40,6 +47,21 @@ module testbench (
 		end
 	end
 
+    integer count_instr_reqs = 0;
+    always @(posedge clk) begin
+        if (!reset) begin
+            if (instr_req_valid && instr_req_ready) begin
+                count_instr_reqs <= count_instr_reqs + 1;
+            end
+        end
+    end
+
+    cover property (count_instr_reqs == 1);
+    cover property (count_instr_reqs == 5);
+
+    assume property(instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011);   // ADD
+
+`ifdef BLAH
 	cover property (count_dmemrd);
 	cover property (count_dmemwr);
 	cover property (count_longinsn);
@@ -51,4 +73,5 @@ module testbench (
 	cover property (count_dmemrd >= 2 && count_dmemwr >= 3 && count_longinsn >= 2 && count_comprinsn >= 2);
 	cover property (count_dmemrd >= 2 && count_dmemwr >= 2 && count_longinsn >= 3 && count_comprinsn >= 2);
 	cover property (count_dmemrd >= 2 && count_dmemwr >= 2 && count_longinsn >= 2 && count_comprinsn >= 3);
+`endif
 endmodule
