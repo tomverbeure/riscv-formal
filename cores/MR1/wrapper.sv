@@ -36,7 +36,8 @@ module rvfi_wrapper (
 
         .instr_req_valid(instr_req_valid),
         .instr_req_ready(instr_req_ready),
-        .instr_req_addr(instr_req_ready),
+        .instr_req_addr(instr_req_addr),
+
         .instr_rsp_valid(instr_rsp_valid),
         .instr_rsp_data(instr_rsp_data),
 
