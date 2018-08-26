@@ -29,6 +29,7 @@ module testbench (
 		`RVFI_CONN
 	);
 
+    integer count_cycles = 0;
 	integer count_dmemrd = 0;
 	integer count_dmemwr = 0;
 	integer count_longinsn = 0;
@@ -45,6 +46,8 @@ module testbench (
 			if (rvfi_insn[1:0] != 3)
 				count_comprinsn <= count_comprinsn + 1;
 		end
+
+        count_cycles <= count_cycles + 1;
 	end
 
     integer count_instr_reqs = 0;
@@ -56,10 +59,14 @@ module testbench (
         end
     end
 
-    cover property (count_instr_reqs == 1);
-    cover property (count_instr_reqs == 5);
+    cover property (count_instr_reqs == 1 || count_cycles == 20);
+    cover property (count_instr_reqs == 5 || count_cycles == 20);
 
-    assume property(instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011);   // ADD
+//    assume property(instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011);  // ADD
+//    assume property(instr_rsp_data == 32'b0000000_00000_00000_000_01000_1100011);  // BEQ
+//    assume property(instr_req_ready);
+//    assume property(instr_rsp_valid);
+    assume property((instr_rsp_data == 32'b0000000_00000_00000_000_01000_1100011) || (instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011));
 
 `ifdef BLAH
 	cover property (count_dmemrd);
@@ -74,4 +81,5 @@ module testbench (
 	cover property (count_dmemrd >= 2 && count_dmemwr >= 2 && count_longinsn >= 3 && count_comprinsn >= 2);
 	cover property (count_dmemrd >= 2 && count_dmemwr >= 2 && count_longinsn >= 2 && count_comprinsn >= 3);
 `endif
+
 endmodule
