@@ -64,9 +64,10 @@ module testbench (
 
 //    assume property(instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011);  // ADD
 //    assume property(instr_rsp_data == 32'b0000000_00000_00000_000_01000_1100011);  // BEQ
-//    assume property(instr_req_ready);
-//    assume property(instr_rsp_valid);
-    assume property((instr_rsp_data == 32'b0000000_00000_00000_000_01000_1100011) || (instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011));
+    assume property(instr_rsp_data == 32'b0000000_00000_00000_010_01000_0000011);  // LW
+//    assume property((instr_rsp_data == 32'b0000000_00000_00000_000_01000_1100011) || (instr_rsp_data == 32'b0000000_00010_00001_000_00011_0110011));
+    assume property(instr_req_ready);
+    assume property(instr_rsp_valid);
 
 `ifdef BLAH
 	cover property (count_dmemrd);
