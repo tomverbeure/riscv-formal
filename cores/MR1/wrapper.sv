@@ -52,10 +52,13 @@ module rvfi_wrapper (
         else begin
             instr_in_flight <= instr_in_flight + (inst_req_valid && instr_req_ready) - instr_rsp_valid;
         end
-
-        assume(instr_in_flight == 0 || instr_in_flight == 1);
     end
 
+    rand reg instr_req_ready_rand;
+    assign instr_req_ready = instr_req_ready_rand && instr_req_valid;
+
+    rand reg instr_rsp_valid_rand;
+    assign instr_rsp_valid = instr_rsp_valid_rand && instr_in_flight > 0;
 
 
 `ifdef VEXRISCV_FAIRNESS
