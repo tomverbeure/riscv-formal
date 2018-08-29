@@ -41,27 +41,22 @@ module rvfi_wrapper (
         .instr_rsp_valid(instr_rsp_valid),
         .instr_rsp_data(instr_rsp_data),
 
-`ifdef DUMMY
-		.iBus_cmd_valid (iBus_cmd_valid),
-		.iBus_cmd_ready (iBus_cmd_ready),
-		.iBus_cmd_payload_pc  (iBus_cmd_payload_pc ),
-		.iBus_rsp_ready(iBus_rsp_ready),
-		.iBus_rsp_inst (iBus_rsp_inst),
-		.iBus_rsp_error(1'b0),
-
-		.dBus_cmd_valid(dBus_cmd_valid),
-		.dBus_cmd_payload_wr(dBus_cmd_payload_wr),
-		.dBus_cmd_payload_address(dBus_cmd_payload_address),
-		.dBus_cmd_payload_data(dBus_cmd_payload_data),
-		.dBus_cmd_payload_size(dBus_cmd_payload_size),
-		.dBus_cmd_ready(dBus_cmd_ready),
-		.dBus_rsp_ready(dBus_rsp_ready),
-		.dBus_rsp_data(dBus_rsp_data),
-		.dBus_rsp_error(1'b0),
-`endif
-
 		`RVFI_CONN
 	);
+
+    integer instr_in_flight = 0;
+    always @(posedge clock) begin
+        if (reset) begin
+            instr_in_flight <= 0;
+        end
+        else begin
+            instr_in_flight <= instr_in_flight + (inst_req_valid && instr_req_ready) - instr_rsp_valid;
+        end
+
+        assume(instr_in_flight == 0 || instr_in_flight == 1);
+    end
+
+
 
 `ifdef VEXRISCV_FAIRNESS
 	(* keep *) reg [2:0] iBusCmdPendingCycles = 0;
