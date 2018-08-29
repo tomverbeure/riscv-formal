@@ -1,8 +1,11 @@
 module testbench (
 	input clk,
 
-	input         instr_valid,
-    input  [31:0] instr
+	output         instr_req_valid,
+	input          instr_req_ready,
+	output [31:0]  instr_req_addr,
+    input          instr_rsp_valid,
+    input  [31:0]  instr_rsp_data
 
 );
 	reg reset  = 1;
@@ -16,11 +19,16 @@ module testbench (
 		.clk            (clk           ),
 		.reset          (reset         ),
 
-		.instr_valid    (instr_valid   ),
-		.instr          (instr         ),
+		.instr_req_valid    (instr_req_valid   ),
+		.instr_req_ready    (instr_req_ready   ),
+		.instr_req_addr     (instr_req_addr    ),
+
+		.instr_rsp_valid    (instr_rsp_valid   ),
+		.instr_rsp_data     (instr_rsp_data    ),
 
 		`RVFI_CONN
 	);
+
 
 	(* keep *) wire                                spec_valid;
 	(* keep *) wire                                spec_trap;
