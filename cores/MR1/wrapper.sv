@@ -30,6 +30,17 @@ module rvfi_wrapper (
     (* keep *) wire instr_rsp_valid;
     (* keep *) wire [31:0]  instr_rsp_data;
 
+    (* keep *) wire data_req_valid;
+    (* keep *) wire data_req_ready;
+    (* keep *) wire [1:0] data_req_wr;
+    (* keep *) wire [31:0] data_req_addr;
+    (* keep *) wire [1:0] data_req_size;
+    (* keep *) wire [31:0] data_req_data;
+
+    (* keep *) wire data_rsp_valid;
+    (* keep *) wire [31:0]  data_rsp_data;
+
+
 	MR1 uut (
 		.clk      (clock    ),
 		.reset    (reset   ),
@@ -40,6 +51,16 @@ module rvfi_wrapper (
 
         .instr_rsp_valid(instr_rsp_valid),
         .instr_rsp_data(instr_rsp_data),
+
+        .data_req_valid(data_req_valid),
+        .data_req_ready(data_req_ready),
+        .data_req_wr(data_req_wr),
+        .data_req_addr(data_req_addr),
+        .data_req_size(data_req_size),
+        .data_req_data(data_req_data),
+
+        .data_rsp_valid(data_rsp_valid),
+        .data_rsp_data(data_rsp_data),
 
 		`RVFI_CONN
 	);
@@ -59,6 +80,23 @@ module rvfi_wrapper (
 
     rand reg instr_rsp_valid_rand;
     assign instr_rsp_valid = instr_rsp_valid_rand && instr_in_flight > 0;
+
+
+    integer data_in_flight = 0;
+    always @(posedge clock) begin
+        if (reset) begin
+            data_in_flight <= 0;
+        end
+        else begin
+            data_in_flight <= data_in_flight + (!data_req_wr ? (inst_req_valid && data_req_ready) - data_rsp_valid : 0);
+        end
+    end
+
+    rand reg data_req_ready_rand;
+    assign data_req_ready = data_req_ready_rand && data_req_valid;
+
+    rand reg data_rsp_valid_rand;
+    assign data_rsp_valid = data_rsp_valid_rand && data_in_flight > 0;
 
 
 `ifdef VEXRISCV_FAIRNESS
