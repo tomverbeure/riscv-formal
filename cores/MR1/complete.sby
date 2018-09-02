@@ -29,7 +29,7 @@ prep -nordff -top testbench
 
 [files]
 complete.sv
-~/projects/mr1/MR1.v
+MR1.v
 ../../checks/rvfi_macros.vh
 ../../insns/isa_rv32im.v
 

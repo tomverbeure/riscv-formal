@@ -4,8 +4,19 @@ module testbench (
 	output         instr_req_valid,
 	input          instr_req_ready,
 	output [31:0]  instr_req_addr,
+
     input          instr_rsp_valid,
-    input  [31:0]  instr_rsp_data
+    input  [31:0]  instr_rsp_data,
+
+	output         data_req_valid,
+	input          data_req_ready,
+	input          data_req_wr,
+	output [1:0]   data_req_size,
+	output [31:0]  data_req_data,
+	output [31:0]  data_req_addr,
+
+    input          data_rsp_valid,
+    input  [31:0]  data_rsp_data
 
 );
 	reg reset  = 1;
@@ -25,6 +36,17 @@ module testbench (
 
 		.instr_rsp_valid    (instr_rsp_valid   ),
 		.instr_rsp_data     (instr_rsp_data    ),
+
+		.data_req_valid     (data_req_valid   ),
+		.data_req_ready     (data_req_ready   ),
+		.data_req_wr        (data_req_wr      ),
+		.data_req_addr      (data_req_addr    ),
+		.data_req_addr      (data_req_addr    ),
+		.data_req_size      (data_req_size    ),
+		.data_req_data      (data_req_data    ),
+
+		.data_rsp_valid     (data_rsp_valid   ),
+		.data_rsp_data      (data_rsp_data    ),
 
 		`RVFI_CONN
 	);

@@ -1,19 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
-[*] Sun Sep  2 23:32:19 2018
+[*] Sun Sep  2 22:42:09 2018
 [*]
-[dumpfile] "(null)"
+[dumpfile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/checks/insn_add_ch0/engine_0/trace.vcd"
+[dumpfile_mtime] "Sun Sep  2 22:37:16 2018"
+[dumpfile_size] 267929
 [savefile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/waves_insn_check.gtkw"
 [timestart] 0
 [size] 2467 1483
-[pos] 363 215
-*-5.000821 185 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 461 -283
+*-5.000821 205 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] rvfi_testbench.
 [treeopen] rvfi_testbench.checker_inst.
 [treeopen] rvfi_testbench.wrapper.
 [treeopen] rvfi_testbench.wrapper.uut.
 [sst_width] 359
-[signals_width] 598
+[signals_width] 494
 [sst_expanded] 1
 [sst_vpaned_height] 596
 @28
@@ -107,7 +109,7 @@ rvfi_testbench.checker_inst.rvfi_pc_rdata[31:0]
 rvfi_testbench.checker_inst.rvfi_pc_wdata[31:0]
 @1401200
 -rvfi_pc
-@800200
+@c00200
 -rvfi_regs
 @24
 rvfi_testbench.checker_inst.rvfi_rs1_addr[4:0]
@@ -119,7 +121,7 @@ rvfi_testbench.checker_inst.rvfi_rd_addr[4:0]
 rvfi_testbench.checker_inst.rvfi_rs1_rdata[31:0]
 rvfi_testbench.checker_inst.rvfi_rs2_rdata[31:0]
 rvfi_testbench.checker_inst.rvfi_rd_wdata[31:0]
-@1000200
+@1401200
 -rvfi_regs
 @800200
 -rvfi_mem
@@ -182,118 +184,5 @@ rvfi_testbench.wrapper.instr_rsp_data[31:0]
 -
 @1000200
 -Fetch
-@200
--
-@28
-rvfi_testbench.wrapper.uut.execute_1_.clk
-@800200
--Execute
-@200
--
-@28
-rvfi_testbench.wrapper.uut.execute_1_.io_d2e_valid
-rvfi_testbench.wrapper.uut.execute_1_.io_e2d_stall
-rvfi_testbench.wrapper.uut.execute_1_.io_d2e_decoded_instr_iformat[2:0]
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_d2e_decoded_instr_itype[3:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_d2e_instr[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_d2e_pc[31:0]
-@200
--
--
-@28
-rvfi_testbench.wrapper.uut.execute_1_.io_data_req_valid
-rvfi_testbench.wrapper.uut.execute_1_.io_data_req_ready
-rvfi_testbench.wrapper.uut.execute_1_.io_data_req_wr
-rvfi_testbench.wrapper.uut.execute_1_.io_data_req_size[1:0]
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_data_req_addr[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_data_req_data[31:0]
-@200
--
-@28
-rvfi_testbench.wrapper.uut.execute_1_.io_data_rsp_valid
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_data_rsp_data[31:0]
-@200
--
-@28
-rvfi_testbench.wrapper.uut.execute_1_.rs1_valid
-@22
-rvfi_testbench.wrapper.uut.execute_1_.rs1[31:0]
-@28
-rvfi_testbench.wrapper.uut.execute_1_.lsu_lsu_stall
-rvfi_testbench.wrapper.uut.execute_1_.lsu_cur_state
-@22
-rvfi_testbench.wrapper.uut.execute_1_.lsu_lsu_addr[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.lsu_rsp_data_shift_adj[31:0]
-@200
--
-@24
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_order[63:0]
-@28
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_valid
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_trap
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_halt
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_insn[31:0]
-@28
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_intr
-@200
--
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_mem_addr[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_mem_rdata[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_mem_rmask[3:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_mem_wdata[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_mem_wmask[3:0]
-@200
--
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_pc_rdata[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_pc_wdata[31:0]
-@200
--
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_rd_addr[4:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_rd_wdata[31:0]
-@200
--
-@22
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_rs1_addr[4:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_rs1_rdata[31:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_rs2_addr[4:0]
-rvfi_testbench.wrapper.uut.execute_1_.io_rvfi_rs2_rdata[31:0]
-@1000200
--Execute
-@200
--
-@800200
--RegFile
-@28
-rvfi_testbench.wrapper.uut.reg_file.reset
-@200
--
-@28
-rvfi_testbench.wrapper.uut.reg_file.io_rd2r_rs1_rd
-@22
-rvfi_testbench.wrapper.uut.reg_file.io_rd2r_rs1_rd_addr[4:0]
-rvfi_testbench.wrapper.uut.reg_file.io_r2rr_rs1_data[31:0]
-@200
--
-@28
-rvfi_testbench.wrapper.uut.reg_file.io_rd2r_rs2_rd
-@22
-rvfi_testbench.wrapper.uut.reg_file.io_rd2r_rs2_rd_addr[4:0]
-rvfi_testbench.wrapper.uut.reg_file.io_r2rr_rs2_data[31:0]
-@200
--
-@28
-rvfi_testbench.wrapper.uut.reg_file.rd_wr
-@22
-rvfi_testbench.wrapper.uut.reg_file.rd_wr_addr[4:0]
-rvfi_testbench.wrapper.uut.reg_file.rd_wr_data[31:0]
-@1000200
--RegFile
 [pattern_trace] 1
 [pattern_trace] 0
