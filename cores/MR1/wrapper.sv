@@ -62,7 +62,6 @@ module rvfi_wrapper (
     rand reg instr_rsp_valid_rand;
     assign instr_rsp_valid = instr_rsp_valid_rand && instr_in_flight > 0;
 
-
     integer data_in_flight = 0;
     always @(posedge clock) begin
         if (reset) begin
@@ -72,13 +71,6 @@ module rvfi_wrapper (
             data_in_flight <= data_in_flight + (!data_req_wr ? (instr_req_valid && data_req_ready) - data_rsp_valid : 0);
         end
     end
-
-//    rand reg data_req_ready_rand;
-//    assign data_req_ready = data_req_ready_rand && data_req_valid;
-//
-//    rand reg data_rsp_valid_rand;
-//    assign data_rsp_valid = data_rsp_valid_rand && data_in_flight > 0;
-
 
 `ifdef VEXRISCV_FAIRNESS
 	(* keep *) reg [2:0] instr_req_pending_cycles = 0;
