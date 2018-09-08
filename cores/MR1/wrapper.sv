@@ -13,7 +13,7 @@ module rvfi_wrapper (
 
     (* keep *) wire data_req_valid;
     (* keep *) `rvformal_rand_reg data_req_ready;
-    (* keep *) wire [1:0] data_req_wr;
+    (* keep *) wire data_req_wr;
     (* keep *) wire [31:0] data_req_addr;
     (* keep *) wire [1:0] data_req_size;
     (* keep *) wire [31:0] data_req_data;
