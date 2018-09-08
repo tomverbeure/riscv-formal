@@ -13,10 +13,10 @@ verilog_defines -D RISCV_FORMAL_ILEN=32
 verilog_defines -D RISCV_FORMAL_ALIGNED_MEM
 read_verilog rvfi_macros.vh
 read_verilog MR1.v
-read_verilog -sv -formal cover.sv
+read_verilog -sv -formal raw_trigger.sv
 prep -nordff -top testbench
 
 [files]
-../../checks/rvfi_macros.vh
-MR1.v
-cover.sv
+../../../checks/rvfi_macros.vh
+../MR1.v
+raw_trigger.sv
