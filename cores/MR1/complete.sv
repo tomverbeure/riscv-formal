@@ -10,7 +10,7 @@ module testbench (
 
 	output         data_req_valid,
 	input          data_req_ready,
-	input          data_req_wr,
+	output         data_req_wr,
 	output [1:0]   data_req_size,
 	output [31:0]  data_req_data,
 	output [31:0]  data_req_addr,
