@@ -64,7 +64,7 @@ module testbench (
 	(* keep *) wire [`RISCV_FORMAL_XLEN/8 - 1 : 0] spec_mem_wmask;
 	(* keep *) wire [`RISCV_FORMAL_XLEN   - 1 : 0] spec_mem_wdata;
 
-	rvfi_isa_rv32im isa_spec (
+	rvfi_isa_rv32i isa_spec (
 		.rvfi_valid    (rvfi_valid    ),
 		.rvfi_insn     (rvfi_insn     ),
 		.rvfi_pc_rdata (rvfi_pc_rdata ),
@@ -88,7 +88,19 @@ module testbench (
 	always @* begin
 		if (!reset && rvfi_valid && !rvfi_trap) begin
 			if (rvfi_insn[6:0] != 7'b1110011)
+				// If an instruction is implemented in the RTL but NOT part of the the supported
+				// instruction set, this result in a failure.
+				// E.g. fail if the RTL has MUL enabled, but we check against rv32i (and not rv32im).
 				assert(spec_valid && !spec_trap);
 		end
+
+		if (!reset && rvfi_valid && rvfi_trap) begin
+			if (rvfi_insn[6:0] != 7'b1110011)
+				// If an instrution is NOT implemented in the RTL but part of the supported 
+                // instruction set, this result in a failure.
+				// E.g. fail if the RTL doesn't have MUL, but we check against rv32im.
+				assert(!spec_valid || (spec_valid && spec_trap));
+		end
+		
 	end
 endmodule
