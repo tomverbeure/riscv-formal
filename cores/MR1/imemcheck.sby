@@ -9,7 +9,7 @@ smtbmc --presat --unroll boolector
 
 [script]
 read_verilog -sv imemcheck.sv
-read_verilog ../../VexRiscv.v
+read_verilog ../../MR1.v
 prep -nordff -top testbench
 
 [files]

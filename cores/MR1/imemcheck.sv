@@ -14,26 +14,23 @@ module testbench (
 	always @(posedge clk)
 		reset <= 0;
 
+	(* keep *) wire trap;
 
+    (* keep *) wire                         instr_req_valid;
+    (* keep *) `rvformal_rand_reg           instr_req_ready;
+    (* keep *) wire [31:0]                  instr_req_addr;
+    (* keep *) `rvformal_rand_reg           instr_rsp_valid;
+    (* keep *) `rvformal_rand_reg [31:0]    instr_rsp_data;
 
+    (* keep *) wire                         data_req_valid;
+    (* keep *) `rvformal_rand_reg           data_req_ready;
+    (* keep *) wire                         data_req_wr;
+    (* keep *) wire [31:0]                  data_req_addr;
+    (* keep *) wire [1:0]                   data_req_size;
+    (* keep *) wire [31:0]                  data_req_data;
 
-	(* keep *) wire        iBus_cmd_valid;
-	(* keep *) wire [31:0] iBus_cmd_payload_pc;
-	(* keep *) `rvformal_rand_reg iBus_cmd_ready;
-	(* keep *) `rvformal_rand_reg iBus_rsp_ready;
-	(* keep *) `rvformal_rand_reg [31:0] iBus_rsp_inst;
-
-
-	(* keep *) wire  dBus_cmd_valid;
-	(* keep *) wire  dBus_cmd_payload_wr;
-	(* keep *) wire [31:0] dBus_cmd_payload_address;
-	(* keep *) wire [31:0] dBus_cmd_payload_data;
-	(* keep *) wire [1:0] dBus_cmd_payload_size;
-	(* keep *) `rvformal_rand_reg dBus_cmd_ready;
-	(* keep *) `rvformal_rand_reg    dBus_rsp_ready;
-	(* keep *) `rvformal_rand_reg   [31:0] dBus_rsp_data;
-
-
+    (* keep *) `rvformal_rand_reg           data_rsp_valid;
+    (* keep *) `rvformal_rand_reg [31:0]    data_rsp_data;
 
 	`RVFI_WIRES
 
@@ -49,8 +46,8 @@ module testbench (
 		`RVFI_CONN
 	);
 
-	(* keep *) wire imem_last_valid;
-	(* keep *) wire [31:0] imem_last_addr;
+	(* keep *) wire         imem_last_valid;
+	(* keep *) wire [31:0]  imem_last_addr;
 
 	always @(posedge clk) begin
 		if (reset) begin
@@ -58,45 +55,40 @@ module testbench (
 		end else begin
 			if(imem_last_valid) begin
 				if (imem_last_addr == imem_addr)
-					assume(iBus_rsp_inst[15:0] == imem_data);
+					assume(instr_rsp_data[15:0] == imem_data);
 				if (imem_last_addr+2 == imem_addr)
-					assume(iBus_rsp_inst[31:16] == imem_data);
+					assume(instr_rsp_data[31:16] == imem_data);
 			end
-			if(iBus_rsp_ready) begin
+			if(instr_rsp_valid) begin
 				imem_last_valid <= 0;
 			end
-			if(iBus_cmd_valid && iBus_cmd_ready) begin
+			if(instr_req_valid && instr_req_ready) begin
 				imem_last_valid <= 1;
-				imem_last_addr <= iBus_cmd_payload_pc;
+				imem_last_addr <= instr_req_addr;
 			end
 		end
-		
 	end
 
-
-
-
-
-	VexRiscv uut (
-		.clk       (clk    ),
+	MR1 uut (
+		.clk      (clk    ),
 		.reset    (reset   ),
 
-		.iBus_cmd_valid (iBus_cmd_valid),
-		.iBus_cmd_ready (iBus_cmd_ready),
-		.iBus_cmd_payload_pc  (iBus_cmd_payload_pc ),
-		.iBus_rsp_ready(iBus_rsp_ready),
-		.iBus_rsp_inst (iBus_rsp_inst),
-		.iBus_rsp_error(1'b0),
+        .instr_req_valid(instr_req_valid),
+        .instr_req_ready(instr_req_ready),
+        .instr_req_addr(instr_req_addr),
 
-		.dBus_cmd_valid(dBus_cmd_valid),
-		.dBus_cmd_payload_wr(dBus_cmd_payload_wr),
-		.dBus_cmd_payload_address(dBus_cmd_payload_address),
-		.dBus_cmd_payload_data(dBus_cmd_payload_data),
-		.dBus_cmd_payload_size(dBus_cmd_payload_size),
-		.dBus_cmd_ready(dBus_cmd_ready),
-		.dBus_rsp_ready(dBus_rsp_ready),
-		.dBus_rsp_data(dBus_rsp_data),
-		.dBus_rsp_error(1'b0),
+        .instr_rsp_valid(instr_rsp_valid),
+        .instr_rsp_data(instr_rsp_data),
+
+        .data_req_valid(data_req_valid),
+        .data_req_ready(data_req_ready),
+        .data_req_wr(data_req_wr),
+        .data_req_addr(data_req_addr),
+        .data_req_size(data_req_size),
+        .data_req_data(data_req_data),
+
+        .data_rsp_valid(data_rsp_valid),
+        .data_rsp_data(data_rsp_data),
 
 		`RVFI_CONN
 	);
