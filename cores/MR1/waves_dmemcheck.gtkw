@@ -1,0 +1,64 @@
+[*]
+[*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
+[*] Tue Sep 11 05:12:17 2018
+[*]
+[dumpfile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/dmemcheck/engine_0/trace.vcd"
+[dumpfile_mtime] "Tue Sep 11 05:06:45 2018"
+[dumpfile_size] 126718
+[savefile] "/home/tom/projects/riscv-formal.tvb/cores/MR1/waves_dmemcheck.gtkw"
+[timestart] 0
+[size] 2396 1433
+[pos] 521 186
+*-5.074137 43 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[treeopen] testbench.uut.
+[sst_width] 359
+[signals_width] 362
+[sst_expanded] 1
+[sst_vpaned_height] 453
+@28
+testbench.checker_inst.reset
+testbench.checker_inst.clock
+@200
+-
+@24
+testbench.checker_inst.rvfi_order[63:0]
+@28
+testbench.checker_inst.rvfi_valid
+testbench.checker_inst.rvfi_trap
+@22
+testbench.checker_inst.rvfi_insn[31:0]
+@200
+-
+@28
+testbench.uut.fetch_1_.io_instr_req_valid
+testbench.uut.fetch_1_.io_instr_req_ready
+@22
+testbench.uut.fetch_1_.io_instr_req_addr[31:0]
+@200
+-
+@28
+testbench.uut.fetch_1_.io_instr_rsp_valid
+@22
+testbench.uut.fetch_1_.instr[31:0]
+@200
+-
+-
+@28
+testbench.uut.execute_1_.io_data_req_valid
+testbench.uut.execute_1_.io_data_req_ready
+@29
+testbench.uut.execute_1_.io_data_req_wr
+@22
+testbench.uut.execute_1_.io_data_req_addr[31:0]
+testbench.uut.execute_1_.io_data_req_data[31:0]
+@28
+testbench.uut.execute_1_.io_data_req_size[1:0]
+@200
+-
+@28
+testbench.uut.execute_1_.io_data_rsp_valid
+@22
+testbench.uut.execute_1_.io_data_rsp_data[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
