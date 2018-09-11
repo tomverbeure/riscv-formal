@@ -72,13 +72,15 @@ module rvfi_wrapper (
         end
     end
 
-`ifdef VEXRISCV_FAIRNESS
+`ifdef MR1_FAIRNESS
 	(* keep *) reg [2:0] instr_req_pending_cycles = 0;
 	(* keep *) reg [2:0] instr_rsp_pending_cycles = 0;
 	(* keep *) reg       instr_rsp_pending_valid = 0;
+
 	(* keep *) reg [2:0] data_req_pending_cycles = 0;
 	(* keep *) reg [2:0] data_rsp_pending_cycles = 0;
 	(* keep *) reg       data_rsp_pending_valid = 0;
+
 	always @(posedge clock) begin
 		if(instr_req_valid && !instr_req_ready) begin
 			instr_req_pending_cycles <= instr_req_pending_cycles + 1;
